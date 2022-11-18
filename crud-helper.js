@@ -1,6 +1,8 @@
 // Connect to the database
 require('dotenv').config();
 require('./config/database');
+mongoose.connect(process.env.DATABASE_URL);
+
 
 // Require the Mongoose models
 const User = require('./models/user');
