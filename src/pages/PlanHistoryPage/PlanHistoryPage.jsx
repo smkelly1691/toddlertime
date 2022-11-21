@@ -1,9 +1,9 @@
 import * as userService from '../../utilities/users-service'
 
-export default function OrderHistoryPage() {
+export default function PlanHistoryPage() {
     return (
         <>
-            <h1>OrderHistoryPage</h1>
+            <h1>PlanHistoryPage</h1>
         </>
     )
 }
