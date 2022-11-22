@@ -5,6 +5,7 @@ const Category = require('./models/category');
 const Activity = require('./models/activity');
 
 (async function() {
+    await Category.deleteMany({});
     const categories = await Category.create([
         {name: 'Fine Motor', sortOrder: 10},
         {name: 'Gross Motor', sortOrder: 20},
@@ -79,7 +80,7 @@ const Activity = require('./models/activity');
         category: categories[2], 
         description: 'Use some flashcards with easy three letter words and pictures of things your child would recognize to practice word recognition', 
         duration: 60},
-        {name: 'StoryTime', 
+        {name: 'Story Time', 
         category: categories[2], 
         description: 'Read a story or two to your child making sure to be as animated as possible', 
         duration: 60},
@@ -137,7 +138,7 @@ const Activity = require('./models/activity');
         duration: 90},
     ]);
 
-    console.log(items)
+    console.log(activities)
 
     process.exit();
 
