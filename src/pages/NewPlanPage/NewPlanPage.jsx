@@ -11,7 +11,7 @@ export default function NewPlanPage() {
             categoriesRef.current = [...new Set(activities.map(activity => activity.category.name))];
             setPlanItems(activities);
         }
-        getItems();
+        getActivities();
     }, []);
 
     return (

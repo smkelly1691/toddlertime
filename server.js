@@ -19,7 +19,6 @@ app.use(require('./config/checkToken'))
 
 app.use('/api/users', require('./routes/api/users'));
 
-const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/activities', ensureLoggedIn, require('./routes/api/activities'));
 
 app.get('/*', function(req, res) {
