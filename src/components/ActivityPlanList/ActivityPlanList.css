@@ -1,0 +1,15 @@
+.ActivityPlanList {
+    width: 250px;
+    margin-left: 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+
+}
+
+.section-heading {
+    padding: 10px;
+    background-color: #F9F9F9;
+    margin-bottom: 20px;
+    font-size: 13px;
+    border-bottom: 1px solid black;
+}

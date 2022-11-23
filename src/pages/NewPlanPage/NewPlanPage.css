@@ -1,0 +1,56 @@
+body {
+    background-color: #EDF7F6;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.NewPlanPage {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #F9D7CF;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    /* padding: 20px; */
+    background-color: #BBE6E9
+}
+
+.NewPlanPage aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+
+}
+
+footer {
+    height: 40px;
+    padding: 10px;
+    background-color: #BBE6E9;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+button {
+    margin-right: 15px;
+}

@@ -1,8 +1,12 @@
+import './ActivityListItem.css'
+
 export default function ActivityListItem({ planItem }) {
     return (
         <div className="ActivityListItem">
-            <h3 className="name">Name: {planItem.name}&nbsp;</h3>
-            <h3 className="duration">&nbsp; | &nbsp; Duration: {planItem.duration} minutes</h3>
+            <div className="list-item">
+                <h4>Name: <span className="name">{planItem.name}&nbsp;</span></h4>
+                <h4>&nbsp; | &nbsp; Duration: <span className="duration">{planItem.duration} minutes</span></h4>
+            </div>
             <button className="btn-sm">DETAILS</button>
             <button className="btn-sm">ADD TO PLAN</button>
         </div>

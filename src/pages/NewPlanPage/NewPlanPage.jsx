@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import './NewPlanPage.css'
 import * as activitiesAPI from '../../utilities/activities-api';
 import { Link } from 'react-router-dom';
 import UserDetail from "../../components/UserDetail/UserDetail";
@@ -31,18 +32,20 @@ export default function NewPlanPage({ user, setUser }) {
                 <Logo />
                 <UserLogOut user={user} setUser={setUser} />
             </header>
-            <aside>
-                <CategoryList 
-                    categories={categoriesRef.current}
-                    activeCat={activeCat}
-                    setActiveCat={setActiveCat}
+            <div className="body">
+                <aside>
+                    <CategoryList 
+                        categories={categoriesRef.current}
+                        activeCat={activeCat}
+                        setActiveCat={setActiveCat}
+                    />
+                    <NavBar />
+                </aside>
+                <ActivityList
+                    planItems={planItems.filter(activity => activity.category.name === activeCat)}
                 />
-                <NavBar />
-            </aside>
-            <ActivityList 
-                planItems={planItems.filter(activity => activity.category.name === activeCat)}
-            />
-            <ActivityPlanList />
+                <ActivityPlanList />
+            </div>
             <footer>
                 <span>Toddler Time</span>
                 <span>© 2022 | Powered by React | All Rights Reserved</span>
