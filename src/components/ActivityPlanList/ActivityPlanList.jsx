@@ -5,7 +5,7 @@ export default function ActivityPlanList() {
         <div className="ActivityPlanList">
             <div className="section-heading">
                 <span>ACTIVITY PLAN</span>
-                <span>{new Date.now()}</span>
+                <span>{new Date().toLocaleDateString()}</span>
             </div>
             <div className="empty">
                 No Items added to Plan

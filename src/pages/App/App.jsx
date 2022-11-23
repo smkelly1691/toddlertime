@@ -14,11 +14,7 @@ export default function App() {
     <main className="App">
       { user ? 
         <>
-          <NavBar user={user} setUser={setUser} />
-          <Routes>
-            <Route path="/activityplans/new" element={<NewPlanPage />} />
-            <Route path="/activityplans" element={<PlanHistoryPage />} />
-          </Routes>
+          <NewPlanPage user={user} setUser={setUser} />
         </>
         :
         <AuthPage setUser={setUser}/>
