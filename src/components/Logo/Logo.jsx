@@ -1,8 +1,8 @@
 export default function Logo() {
     return (
         <div className="Logo">
-            <div>TODDLER TIME</div>
-            <div>Every Day is an Adventure</div>
+            <h1>TODDLER TIME</h1>
+            <h2>Every Day is an Adventure</h2>
         </div>
     );
 }
