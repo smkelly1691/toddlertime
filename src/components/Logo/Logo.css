@@ -1,0 +1,10 @@
+h1 {
+    margin-bottom: 0;
+}
+
+.Logo h3 {
+    margin-top: 0;
+    color: rgb(138, 76, 76);
+    font-weight:500;
+    font-size: 16px;
+}

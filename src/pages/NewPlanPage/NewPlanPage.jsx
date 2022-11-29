@@ -9,12 +9,14 @@ import CategoryList from "../../components/CategoryList/CategoryList";
 import ActivityList from "../../components/ActivityList/ActivityList";
 import UserLogOut from "../../components/UserLogOut/UserLogOut";
 import NavBar from "../../components/NavBar/NavBar";
+import { useNavigate } from "react-router-dom";
 
 export default function NewPlanPage({ user, setUser }) {
     const [planItems, setPlanItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
     const [myplan, setMyplan] = useState(null);
     const categoriesRef = useRef([]);
+    const navigate = useNavigate();
 
     useEffect(function() {
         async function getActivities() {
@@ -36,6 +38,11 @@ export default function NewPlanPage({ user, setUser }) {
     async function handleAddToPlan(activityId) {
         const updatedPlan = await activityPlansAPI.addActivityToPlan(activityId)
         setMyplan(updatedPlan)
+    }
+
+    async function handleMarkCompleted() {
+        await activityPlansAPI.markComplete();
+        navigate('/activityPlans');
     }
 
     return (
@@ -62,7 +69,7 @@ export default function NewPlanPage({ user, setUser }) {
                     />
                 </div>
                 <div>
-                <ActivityPlanList activityPlan={myplan} />
+                <ActivityPlanList activityPlan={myplan} handleMarkCompleted={handleMarkCompleted} />
                 </div>
             </div>
             <footer>

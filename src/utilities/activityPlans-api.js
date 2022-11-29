@@ -9,3 +9,7 @@ export function getMyplan() {
 export function addActivityToPlan(activityId) {
     return sendRequest(`${BASE_URL}/myplan/activities/${activityId}`, 'POST');
 }
+
+export function markComplete() {
+    return sendRequest(`${BASE_URL}/myplan/complete`, 'POST');
+}
