@@ -23,7 +23,7 @@ export default function ActivityPlanList( { activityPlan }) {
                 {planItems.length ?
                     <>
                         <h5>ACTIVITY &nbsp;&nbsp;&nbsp;&nbsp; DURATION</h5>
-                        <hr />
+                        <hr></hr>
                         <ul>{planItems}</ul>
                         <section className="total">
                             {activityPlan.isComplete ?
