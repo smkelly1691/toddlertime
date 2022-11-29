@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import './NewPlanPage.css'
 import * as activitiesAPI from '../../utilities/activities-api';
+import * as activityPlansAPI from '../../utilities/activityPlans-api';
 import { Link } from 'react-router-dom';
 import UserDetail from "../../components/UserDetail/UserDetail";
 import Logo from "../../components/Logo/Logo";
@@ -13,6 +14,7 @@ import NavBar from "../../components/NavBar/NavBar";
 export default function NewPlanPage({ user, setUser }) {
     const [planItems, setPlanItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
+    const [ myplan, setMyplan ] = useState(null);
     const categoriesRef = useRef([]);
 
     useEffect(function() {
@@ -20,10 +22,16 @@ export default function NewPlanPage({ user, setUser }) {
             const activities = await activitiesAPI.getAll();
             categoriesRef.current = [...new Set(activities.map(activity => activity.category.name))];
             setPlanItems(activities);
-            setActiveCat(categoriesRef.current[0]);
-        }
+            setActiveCat(activities[0].category.name);
+        };
         getActivities();
-    }, []);
+
+        async function getMyplan() {
+            const myplan = await activityPlansAPI.getMyplan();
+            setMyplan(myplan);
+        };
+        getMyplan();
+    }, [])
 
     return (
         <main className="NewPlanPage">
@@ -44,7 +52,7 @@ export default function NewPlanPage({ user, setUser }) {
                 <ActivityList
                     planItems={planItems.filter(activity => activity.category.name === activeCat)}
                 />
-                <ActivityPlanList />
+                <ActivityPlanList activityPlan={myplan} />
             </div>
             <footer>
                 <span>Toddler Time</span>

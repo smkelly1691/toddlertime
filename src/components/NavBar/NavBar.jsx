@@ -1,12 +1,28 @@
-import { Link } from 'react-router-dom'
-import './NavBar.css'
+import './NavBar.css';
+import { Routes, Route, Navigate, Link } from 'react-router-dom';
+import NewPlanPage from '../../pages/NewPlanPage/NewPlanPage';
+import PlanHistoryPage from '../../pages/PlanHistoryPage/PlanHistoryPage';
 
-export default function NavBar() {
+
+
+export default function NavBar(user, setUser) {
+
     return (
         <nav>
             <div className="NavBar">
-                <Link to="/activityplans">MY PLANS</Link>
-                <Link to="/activityplans/new">NEW PLAN</Link>
+                <div>
+                    <Link 
+                        to="/activityPlans/new" 
+                        // element=<NewPlanPage user={user} setUser={setUser}
+                    >NEW PLAN
+                    </Link>
+                    <Link
+                        to="/activityPlans" 
+                        // element=<PlanHistoryPage user={user} setUser={setUser}/>
+                    >
+                    MY PLANS
+                    </Link>
+                </div>
             </div>
         </nav>
     );

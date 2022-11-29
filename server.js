@@ -21,6 +21,7 @@ app.use(require('./config/checkToken'))
 // Routes
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/activities', ensureLoggedIn, require('./routes/api/activities'));
+app.use('/api/activityPlans', ensureLoggedIn, require('./routes/api/activityPlans'));
 
 // Catch All Route
 app.get('/*', function(req, res) {

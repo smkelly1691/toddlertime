@@ -35,12 +35,24 @@ const activityPlanSchema = new Schema({
     toJSON: { virtuals: true }
 })
 
-planItemSchema.virtual('durationTotal').get(function() {
+activityPlanSchema.virtual('durationTotal').get(function() {
     return this.planItems.reduce((total, activity) => total + activity.extDuration, 0)
 })
 
-planItemSchema.virtual('totalQty').get(function() {
+activityPlanSchema.virtual('totalQty').get(function() {
     return this.planItems.reduce((total, activity) => total + activity.qty, 0)
 })
+
+activityPlanSchema.virtual('planId').get(function() {
+    return this.id.slice(-6).toUpperCase()
+})
+
+activityPlanSchema.statics.getMyplan = function(userId) {
+    return this.findOneAndUpdate(
+        { user: userId, isComplete: false },
+        { user: userId },
+        { upsert: true, new: true }
+    );
+};
 
 module.exports = mongoose.model('ActivityPlan', activityPlanSchema)
