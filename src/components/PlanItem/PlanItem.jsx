@@ -1,11 +1,11 @@
-export default function PlanItem() {
+export default function PlanItem({ planItem }) {
     return (
         <div className="PlanItem">
             <div className="name">
-                <span>{PlanItem.activity.name}</span>
+                <span>{planItem.activity.name}</span>
             </div>
             <div className="duration">
-                <span>{PlanItem.activity.duration} minutes</span>
+                <span>{planItem.activity.duration} minutes</span>
             </div>
         </div>
     )

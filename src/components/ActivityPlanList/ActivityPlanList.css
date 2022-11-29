@@ -14,3 +14,23 @@
     font-size: 13px;
     border-bottom: 1px solid black;
 }
+
+.planItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+span.planItems {
+    margin-top: 10px;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+}

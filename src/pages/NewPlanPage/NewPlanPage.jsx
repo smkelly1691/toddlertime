@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import './NewPlanPage.css'
 import * as activitiesAPI from '../../utilities/activities-api';
 import * as activityPlansAPI from '../../utilities/activityPlans-api';
-import { Link } from 'react-router-dom';
 import UserDetail from "../../components/UserDetail/UserDetail";
 import Logo from "../../components/Logo/Logo";
 import ActivityPlanList from "../../components/ActivityPlanList/ActivityPlanList";
@@ -14,7 +13,7 @@ import NavBar from "../../components/NavBar/NavBar";
 export default function NewPlanPage({ user, setUser }) {
     const [planItems, setPlanItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
-    const [ myplan, setMyplan ] = useState(null);
+    const [myplan, setMyplan] = useState(null);
     const categoriesRef = useRef([]);
 
     useEffect(function() {
@@ -22,7 +21,7 @@ export default function NewPlanPage({ user, setUser }) {
             const activities = await activitiesAPI.getAll();
             categoriesRef.current = [...new Set(activities.map(activity => activity.category.name))];
             setPlanItems(activities);
-            setActiveCat(activities[0].category.name);
+            setActiveCat(categoriesRef.current[0])
         };
         getActivities();
 
@@ -32,6 +31,12 @@ export default function NewPlanPage({ user, setUser }) {
         };
         getMyplan();
     }, [])
+
+    //Event Handlers
+    async function handleAddToPlan(activityId) {
+        const updatedPlan = await activityPlansAPI.addActivityToPlan(activityId)
+        setMyplan(updatedPlan)
+    }
 
     return (
         <main className="NewPlanPage">
@@ -51,6 +56,7 @@ export default function NewPlanPage({ user, setUser }) {
                 </aside>
                 <ActivityList
                     planItems={planItems.filter(activity => activity.category.name === activeCat)}
+                    handleAddToPlan={handleAddToPlan} 
                 />
                 <ActivityPlanList activityPlan={myplan} />
             </div>

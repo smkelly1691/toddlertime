@@ -55,4 +55,16 @@ activityPlanSchema.statics.getMyplan = function(userId) {
     );
 };
 
+activityPlanSchema.methods.addActivityToPlan = async function (activityId) {
+    const myplan = this;
+    const planItem = myplan.planItems.find(planItem => planItem.activity._id.equals(activityId));
+    if (planItem) {
+        planItem.qty += 1;
+    } else {
+        const activity = await mongoose.model('Activity').findById(activityId);
+        myplan.planItems.push({ activity });
+    }
+    return myplan.save();
+};
+
 module.exports = mongoose.model('ActivityPlan', activityPlanSchema)

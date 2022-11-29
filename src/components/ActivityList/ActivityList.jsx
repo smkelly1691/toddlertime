@@ -7,7 +7,7 @@ export default function ActivityList({ planItems, handleAddToPlan }) {
         <ActivityListItem 
             key={activity._id}
             planItem={activity}
-            handleAddtoPlan={handleAddToPlan}
+            handleAddToPlan={handleAddToPlan}
         />
     );
     return (

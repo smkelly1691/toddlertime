@@ -22,7 +22,7 @@ export default function ActivityPlanList( { activityPlan }) {
             <div className="planItems">
                 {planItems.length ?
                     <>
-                        {planItems}
+                        <ul>{planItems}</ul>
                         <section className="total">
                             {activityPlan.isComplete ?
                                 <span>TOTAL ACTIVITIES:&nbsp;&nbsp;</span>
@@ -32,8 +32,8 @@ export default function ActivityPlanList( { activityPlan }) {
                             >MARK AS COMPLETE
                             </button>
                             }
-                            <span>{activityPlan.totalQty}</span>
-                            <span>${activityPlan.durationTotal.toFixed(2)}</span>
+                            <div>Total Activities: {activityPlan.totalQty}</div>
+                            <div>Total Duration: {activityPlan.durationTotal}</div>
                         </section>
                     </>
                     :
