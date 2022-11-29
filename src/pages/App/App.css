@@ -1,8 +1,13 @@
-.App {
+.app-container {
+  margin: 20px;
+}
+
+main.App {
   text-align: center;
   border: 2px solid black;
-  min-height: 100vh;
-  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(225, 137, 137);
 }
 
 .App-logo {

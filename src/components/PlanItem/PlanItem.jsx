@@ -1,12 +1,13 @@
+import './PlanItem.css'
+
 export default function PlanItem({ planItem }) {
     return (
         <div className="PlanItem">
-            <div className="name">
-                <span>{planItem.activity.name}</span>
-            </div>
-            <div className="duration">
-                <span>{planItem.activity.duration} minutes</span>
-            </div>
+                <div>
+                    <span>{planItem.activity.name}</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>{planItem.activity.duration} min</span>
+                </div>
         </div>
     )
 }

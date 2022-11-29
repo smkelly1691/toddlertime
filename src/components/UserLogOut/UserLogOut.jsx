@@ -1,4 +1,5 @@
 import { logOut } from '../../utilities/users-service';
+import './UserLogOut.css'
 
 export default function UserLogOut({ user, setUser }) {
     function handleLogOut() {
@@ -8,7 +9,7 @@ export default function UserLogOut({ user, setUser }) {
 
     return (
         <div className="UserLogOut">
-            <button className="btn-sm" onClick={handleLogOut}>LOG OUT</button>
+            <button className="btn-lg" onClick={handleLogOut}>LOG OUT</button>
         </div>
     );
 }

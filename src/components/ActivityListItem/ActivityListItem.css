@@ -1,7 +1,16 @@
+.ActivityListItem {
+    display: flex;
+    flex-direction: column;
+    /* width: 80%; */
+    justify-content: center;
+    align-items: center;
+}
+
 .list-item {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 10px;
 }
 
 .name {

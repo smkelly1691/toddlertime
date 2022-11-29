@@ -12,7 +12,9 @@ export default function ActivityList({ planItems, handleAddToPlan }) {
     );
     return (
         <main className="ActivityList">
+            <div className="activity-list">
             {activities}
+            </div>
         </main>
     );
 }

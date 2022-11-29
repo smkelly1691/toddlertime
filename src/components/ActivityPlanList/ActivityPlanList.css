@@ -1,29 +1,27 @@
 
 .ActivityPlanList {
     width: 250px;
+    height: 100vh;
     margin-left: 0;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-
+    border-left: 2px solid black;
+    font-size: 15px;
+    text-align:center;
+    line-break: none;
 }
 
 .section-heading {
-    padding: 10px;
+    padding: 20px;
     background-color: #F9F9F9;
     margin-bottom: 20px;
-    font-size: 13px;
+    font-size: 15px;
     border-bottom: 1px solid black;
 }
 
 .planItems {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding: 10px;
-}
-
-span.planItems {
-    margin-top: 10px;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .total {
@@ -31,6 +29,18 @@ span.planItems {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px;
-    margin: 5px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+h5 {
+    margin-top: 10px;
+}
+
+div.ActivityPlanList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
 }

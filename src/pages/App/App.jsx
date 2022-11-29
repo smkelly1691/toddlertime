@@ -13,9 +13,9 @@ export default function App() {
   return (
     <main className="App">
       { user ? 
-      <>
+      <div className="app-container">
         <NewPlanPage user={user} setUser={setUser} />
-      </>
+      </div>
         :
         <AuthPage setUser={setUser}/>
       }

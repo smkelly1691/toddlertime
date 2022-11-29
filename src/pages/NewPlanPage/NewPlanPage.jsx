@@ -54,11 +54,16 @@ export default function NewPlanPage({ user, setUser }) {
                     />
                     <NavBar />
                 </aside>
-                <ActivityList
-                    planItems={planItems.filter(activity => activity.category.name === activeCat)}
-                    handleAddToPlan={handleAddToPlan} 
-                />
+                <div className="activity-list">
+                    <h2>{activeCat} Activities</h2>
+                    <ActivityList
+                        planItems={planItems.filter(activity => activity.category.name === activeCat)}
+                        handleAddToPlan={handleAddToPlan} 
+                    />
+                </div>
+                <div>
                 <ActivityPlanList activityPlan={myplan} />
+                </div>
             </div>
             <footer>
                 <span>Toddler Time</span>
