@@ -1,4 +1,5 @@
 const ActivityPlan = require('../../models/activityPlan');
+const Activity = require('../../models/activity');
 
 module.exports = {
     myplan,
@@ -12,8 +13,8 @@ async function myplan(req, res) {
 }
 
 async function addToPlan(req, res) {
-    const myplan = await ActivityPlan.getMyplan(req.user._id)
-    await myplan.addActivityToPlan(req.params.id)
+    const myplan = await ActivityPlan.getMyplan(req.user._id);
+    await myplan.addActivityToPlan(req.params.id);
     res.json(myplan)
 }
 

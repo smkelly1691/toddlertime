@@ -11,5 +11,5 @@ export function addActivityToPlan(activityId) {
 }
 
 export function markComplete() {
-    return sendRequest(`${BASE_URL}/myplan/complete`, 'POST');
+    return sendRequest(`${BASE_URL}/myplan/markComplete`, 'POST');
 }

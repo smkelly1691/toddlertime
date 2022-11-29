@@ -1,7 +1,7 @@
 import './ActivityPlanList.css'
 import PlanItem from "../PlanItem/PlanItem";
 
-export default function ActivityPlanList( { activityPlan, handleMarkCompleted }) {
+export default function ActivityPlanList({ activityPlan, handleMarkCompleted }) {
     if (!activityPlan) return null;
 
     const planItems = activityPlan.planItems.map(activity =>
@@ -20,7 +20,8 @@ export default function ActivityPlanList( { activityPlan, handleMarkCompleted })
                     :
                     <span>NEW ACTIVITY PLAN</span>
                 }
-                <span>  &nbsp;|&nbsp;</span>
+                <span><br></br></span>
+                <span>START DATE:</span>
                 <span>{new Date(activityPlan.updatedAt).toLocaleDateString()}</span>
             </div>
             <div className="planItems">
@@ -30,7 +31,7 @@ export default function ActivityPlanList( { activityPlan, handleMarkCompleted })
                         <ul>{planItems}</ul>
                         <section className="total">
                             {activityPlan.isComplete ?
-                                <span>TOTAL ACTIVITIES:&nbsp;&nbsp;</span>
+                                <span>ACTIVITY PLAN COMPLETE</span>
                             :
                             <button
                                 onClick={handleMarkCompleted}

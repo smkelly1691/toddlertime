@@ -1,10 +1,10 @@
-import sendRequest from './send-request'
-const BASE_URL = '/api/activities'
+import sendRequest from './send-request';
+const BASE_URL = '/api/activities';
 
 export function getAll() {
     return sendRequest(BASE_URL);
 }
 
 export function getById(id) {
-    return sendRequest(`${BASE_URL}/${id}`)
+    return sendRequest(`${BASE_URL}/${id}`);
 }
