@@ -36,7 +36,7 @@ const activityPlanSchema = new Schema({
 })
 
 activityPlanSchema.virtual('durationTotal').get(function() {
-    return this.planItems.reduce((total, activity) => total + activity.extDuration, 0)
+    return this.planItems.reduce((total, activity) => total + activity.extDuration/60, 0)
 })
 
 activityPlanSchema.virtual('totalQty').get(function() {

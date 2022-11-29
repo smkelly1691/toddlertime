@@ -33,7 +33,7 @@ export default function ActivityPlanList( { activityPlan }) {
                             </button>
                             }
                             <div>Total Activities: {activityPlan.totalQty}</div>
-                            <div>Total Duration: {activityPlan.durationTotal}</div>
+                            <div>Total Duration: {activityPlan.durationTotal} Hours</div>
                         </section>
                     </>
                     :
