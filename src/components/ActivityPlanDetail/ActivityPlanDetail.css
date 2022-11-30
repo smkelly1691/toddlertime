@@ -1,0 +1,46 @@
+
+.ActivityPlanDetail {
+    width: 250px;
+    height: 100vh;
+    margin-left: 0;
+    border-left: 2px solid black;
+    font-size: 15px;
+    text-align:center;
+    line-break: none;
+}
+
+.section-heading {
+    padding: 20px;
+    background-color: #F9F9F9;
+    margin-bottom: 20px;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+}
+
+.planItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+h5 {
+    margin-top: 10px;
+}
+
+div.ActivityPlanDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}

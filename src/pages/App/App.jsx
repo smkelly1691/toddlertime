@@ -1,24 +1,29 @@
-import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
-import { Navigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import { getUser } from '../../utilities/users-service'
-import AuthPage from '../AuthPage/AuthPage'
-import NewPlanPage from '../NewPlanPage/NewPlanPage'
-import PlanHistoryPage from '../PlanHistoryPage/PlanHistoryPage'
+import { getUser } from '../../utilities/users-service';
+import AuthPage from '../AuthPage/AuthPage';
+import NewPlanPage from '../NewPlanPage/NewPlanPage';
+import PlanHistoryPage from '../PlanHistoryPage/PlanHistoryPage';
 
 export default function App() {
-  const [user, setUser] = useState(getUser())
+  const [user, setUser] = useState(getUser());
 
   return (
     <main className="App">
-      { user ? 
       <div className="app-container">
-        <NewPlanPage user={user} setUser={setUser} />
-      </div>
+      { user ? 
+      <>
+        <Routes>
+          <Route path="/activityPlans/new" element={<NewPlanPage user={user} setUser={setUser} />} />
+          <Route path="/activityPlans" element={<PlanHistoryPage />} />
+          <Route path="/*" element={<Navigate to="/activityPlans/new" />} />
+        </Routes>
+      </>
         :
-        <AuthPage setUser={setUser}/>
+        <AuthPage setUser={setUser} />
       }
+      </div>
     </main>
   );
 }

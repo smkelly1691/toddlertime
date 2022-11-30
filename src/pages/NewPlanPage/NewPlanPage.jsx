@@ -4,7 +4,7 @@ import * as activitiesAPI from '../../utilities/activities-api';
 import * as activityPlansAPI from '../../utilities/activityPlans-api';
 import UserDetail from "../../components/UserDetail/UserDetail";
 import Logo from "../../components/Logo/Logo";
-import ActivityPlanList from "../../components/ActivityPlanList/ActivityPlanList";
+import ActivityPlanDetail from "../../components/ActivityPlanDetail/ActivityPlanDetail";
 import CategoryList from "../../components/CategoryList/CategoryList";
 import ActivityList from "../../components/ActivityList/ActivityList";
 import UserLogOut from "../../components/UserLogOut/UserLogOut";
@@ -69,7 +69,7 @@ export default function NewPlanPage({ user, setUser }) {
                     />
                 </div>
                 <div>
-                <ActivityPlanList activityPlan={myplan} handleMarkCompleted={handleMarkCompleted} />
+                <ActivityPlanDetail activityPlan={myplan} handleMarkCompleted={handleMarkCompleted} />
                 </div>
             </div>
             <footer>
