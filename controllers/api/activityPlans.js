@@ -1,10 +1,16 @@
 const ActivityPlan = require('../../models/activityPlan');
-const Activity = require('../../models/activity');
+// const Activity = require('../../models/activity');
 
 module.exports = {
     myplan,
     addToPlan,
     markComplete,
+    history,
+}
+
+async function history(req, res) {
+    const activityPlans = await ActivityPlan.find({user: req.user._id, isComplete: true}).sort('-startDate');
+    res.json(activityPlans);
 }
 
 async function myplan(req, res) {

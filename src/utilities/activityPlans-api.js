@@ -13,3 +13,7 @@ export function addActivityToPlan(activityId) {
 export function markComplete() {
     return sendRequest(`${BASE_URL}/myplan/markComplete`, 'POST');
 }
+
+export function getActivityPlanHistory() {
+    return sendRequest(`${BASE_URL}/history`);
+}

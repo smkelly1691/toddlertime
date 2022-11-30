@@ -1,14 +1,22 @@
-import './PlanHistoryPage.css'
-import { useState } from 'react';
-import { getUser } from '../../utilities/users-service';
-import UserDetail from "../../components/UserDetail/UserDetail";
+import { useState, useEffect } from 'react';
+import './PlanHistoryPage.css';
+import * as activityPlansAPI from '../../utilities/activityPlans-api';
 import Logo from "../../components/Logo/Logo";
 import UserLogOut from "../../components/UserLogOut/UserLogOut";
 import NavBar from "../../components/NavBar/NavBar";
-import ActivityPlanDetail from '../../components/ActivityPlanDetail/ActivityPlanDetail';
-import * as activityPlansAPI from '../../utilities/activityPlans-api';
+import ActivityPlanList from '../../components/ActivityPlanList/ActivityPlanList';
+import UserDetail from '../../components/UserDetail/UserDetail';
 
 export default function PlanHistoryPage({ user, setUser }) {
+    const [activityPlans, setActivityPlans] = useState([]);
+
+    useEffect(function() {
+        async function getActivityPlans() {
+            const activityPlans = await activityPlansAPI.getActivityPlanHistory();
+            setActivityPlans(activityPlans);
+        }
+        getActivityPlans();
+    }, []);
 
     return (
         <main className="PlanHistoryPage">
@@ -22,9 +30,11 @@ export default function PlanHistoryPage({ user, setUser }) {
                     <NavBar />
                 </aside>
                 <div className="activityPlans-list">
-                    <h2>ACTIVITY PLANS HISTORY</h2>
+                    <h2>ACTIVITY PLAN HISTORY</h2>
                     <div>
-                        <ActivityPlanDetail />
+                        <ActivityPlanList 
+                            activityPlans={activityPlans}
+                        />
                     </div>
                 </div>
             </div>
@@ -33,5 +43,5 @@ export default function PlanHistoryPage({ user, setUser }) {
                 <span>© 2022 | Powered by React | All Rights Reserved</span>
             </footer>
         </main>
-    )
+    );
 }

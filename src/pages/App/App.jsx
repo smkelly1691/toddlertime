@@ -16,7 +16,7 @@ export default function App() {
       <>
         <Routes>
           <Route path="/activityPlans/new" element={<NewPlanPage user={user} setUser={setUser} />} />
-          <Route path="/activityPlans" element={<PlanHistoryPage />} />
+          <Route path="/activityPlans" element={<PlanHistoryPage user={user} setUser={setUser} />} />
           <Route path="/*" element={<Navigate to="/activityPlans/new" />} />
         </Routes>
       </>

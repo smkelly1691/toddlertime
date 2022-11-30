@@ -1,12 +1,17 @@
-import './ActivityPlanList.css'
-import ActivityPlanDetail from '../ActivityPlanDetail/ActivityPlanDetail';
+import './ActivityPlanList.css';
+import ActivityPlanListItem from '../ActivityPlanListItem/ActivityPlanListItem';
 
-export default function ActivityPlanList({ activityPlans, handleMarkCompleted }) {
-    if (!activityPlans) return null;
+export default function ActivityPlanList({ activityPlans }) {
+    const activityPlanListItems = activityPlans.map(ap =>
+        <ActivityPlanListItem
+            activityPlan={ap}
+            key={ap._id}
+        />
+    );
 
-    const activityPlanItems = activityPlans.activityPlanItems.map(activityPlans)
     return (
         <main className="ActivityPlanList">
+            {activityPlanListItems}
         </main>
-    )
-}
+    );
+};
