@@ -17,7 +17,12 @@ const activitySchema = new Schema({
         required: true
     }
 }, {
-    timestamps: true
+    timestamps: true,
+    toJSON: { virtuals: true }
 });
+
+activitySchema.virtual('activityId').get(function() {
+    return this.id.slice(-6).toUpperCase()
+})
 
 module.exports = activitySchema;

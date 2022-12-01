@@ -6,6 +6,7 @@ module.exports = {
     addToPlan,
     markComplete,
     history,
+    deleteFromPlan
 }
 
 async function history(req, res) {
@@ -28,5 +29,11 @@ async function markComplete(req, res) {
     const myplan = await ActivityPlan.getMyplan(req.user._id);
     myplan.isComplete = true;
     await myplan.save();
+    res.json(myplan);
+}
+
+async function deleteFromPlan(req, res) {
+    const myplan = await ActivityPlan.getMyplan(req.user._id);
+    await myplan.deleteActivityFromPlan(req.params.id);
     res.json(myplan);
 }

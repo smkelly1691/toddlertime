@@ -10,6 +10,7 @@ import ActivityList from "../../components/ActivityList/ActivityList";
 import UserLogOut from "../../components/UserLogOut/UserLogOut";
 import NavBar from "../../components/NavBar/NavBar";
 import { useNavigate } from "react-router-dom";
+import PlanItem from "../../components/PlanItem/PlanItem";
 
 export default function NewPlanPage({ user, setUser }) {
     const [planItems, setPlanItems] = useState([]);
@@ -45,6 +46,11 @@ export default function NewPlanPage({ user, setUser }) {
         navigate('/activityPlans');
     }
 
+    async function handleDeleteActivity(activityId) {
+        const updatedPlan = await activityPlansAPI.deleteActivityFromPlan(activityId)
+        setMyplan(updatedPlan)
+    }
+
     return (
         <main className="NewPlanPage">
             <header>
@@ -66,10 +72,11 @@ export default function NewPlanPage({ user, setUser }) {
                     <ActivityList
                         planItems={planItems.filter(activity => activity.category.name === activeCat)}
                         handleAddToPlan={handleAddToPlan} 
+                        handleDeleteActivity={handleDeleteActivity}
                     />
                 </div>
                 <div>
-                <ActivityPlanDetail activityPlan={myplan} handleMarkCompleted={handleMarkCompleted} />
+                <ActivityPlanDetail activityPlan={myplan} handleMarkCompleted={handleMarkCompleted} handleDeleteActivity={handleDeleteActivity} />
                 </div>
             </div>
             <footer>

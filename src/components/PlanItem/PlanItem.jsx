@@ -1,13 +1,19 @@
 import './PlanItem.css'
 
-export default function PlanItem({ planItem }) {
+export default function PlanItem({ planItem, handleDeleteActivity }) {
     return (
         <div className="PlanItem">
-                <div>
-                    <span>{planItem.activity.name}</span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span>{planItem.activity.duration} min</span>
-                </div>
+            <>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>{planItem.activity.name}</td>
+                            <td>{planItem.activity.duration} min</td>
+                            <td><button onClick={() => handleDeleteActivity(planItem._id)}>X</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </>
         </div>
     )
 }

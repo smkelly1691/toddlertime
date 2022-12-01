@@ -17,3 +17,7 @@ export function markComplete() {
 export function getActivityPlanHistory() {
     return sendRequest(`${BASE_URL}/history`);
 }
+
+export function deleteActivityFromPlan(activityId) {
+    return sendRequest(`${BASE_URL}/myplan/activities/${activityId}`, 'DELETE');
+}
