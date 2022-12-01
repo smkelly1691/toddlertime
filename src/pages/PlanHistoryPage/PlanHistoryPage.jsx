@@ -18,6 +18,7 @@ export default function PlanHistoryPage({ user, setUser }) {
         getActivityPlans();
     }, []);
 
+
     return (
         <main className="PlanHistoryPage">
             <header>
@@ -26,17 +27,12 @@ export default function PlanHistoryPage({ user, setUser }) {
                 <UserLogOut user={user} setUser={setUser} />
             </header>
             <div className="body">
-                <aside>
-                    <NavBar />
-                </aside>
-                <div className="activityPlans-list">
                     <h2>ACTIVITY PLAN HISTORY</h2>
-                    <div>
-                        <ActivityPlanList 
-                            activityPlans={activityPlans}
-                        />
+                    <div className="plans-list">
+                    <ActivityPlanList 
+                        activityPlans={activityPlans}
+                    />
                     </div>
-                </div>
             </div>
             <footer>
                 <span>Toddler Time</span>

@@ -1,7 +1,28 @@
-PlanHistoryPage {
+.PlanHistoryPage {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vh;
+    text-align: center;
+}
+
+.body {
+    width: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+header {
+    width: 100vh;
+}
+
+footer {
+    width: 100vh;
+    padding-left: 40px;
+    padding-right: 40px; 
 }
