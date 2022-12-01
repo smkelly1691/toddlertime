@@ -42,13 +42,15 @@ export default function NewPlanPage({ user, setUser }) {
     }
 
     async function handleMarkCompleted() {
-        await activityPlansAPI.markComplete();
-        navigate('/activityPlans');
+        const updatedPlan = await activityPlansAPI.markComplete();
+        setMyplan(updatedPlan)
+        navigate('/activityPlans/new');
     }
 
     async function handleDeleteActivity(activityId) {
         const updatedPlan = await activityPlansAPI.deleteActivityFromPlan(activityId)
         setMyplan(updatedPlan)
+        navigate('/activityPlans/new')
     }
 
     return (
@@ -76,7 +78,11 @@ export default function NewPlanPage({ user, setUser }) {
                     />
                 </div>
                 <div>
-                <ActivityPlanDetail activityPlan={myplan} handleMarkCompleted={handleMarkCompleted} handleDeleteActivity={handleDeleteActivity} />
+                <ActivityPlanDetail 
+                    activityPlan={myplan} 
+                    handleMarkCompleted={handleMarkCompleted} 
+                    handleDeleteActivity={handleDeleteActivity}
+                />
                 </div>
             </div>
             <footer>

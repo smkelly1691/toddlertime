@@ -29,6 +29,7 @@ async function addToPlan(req, res) {
 async function markComplete(req, res) {
     const myplan = await ActivityPlan.getMyplan(req.user._id);
     myplan.isComplete = true;
+    myplan.planItems.isComplete = true;
     await myplan.save();
     res.json(myplan);
 }

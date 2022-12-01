@@ -9,7 +9,12 @@ export default function PlanItem({ planItem, handleDeleteActivity }) {
                         <tr>
                             <td>{planItem.activity.name}</td>
                             <td>{planItem.activity.duration} min</td>
-                            <td><button onClick={() => handleDeleteActivity(planItem._id)}>X</button></td>
+                            <td>
+                                <button 
+                                    onClick={() => handleDeleteActivity(planItem._id)}
+                                >X
+                                </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

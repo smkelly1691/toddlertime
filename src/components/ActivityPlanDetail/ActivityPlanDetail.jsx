@@ -17,7 +17,9 @@ export default function ActivityPlanDetail({ activityPlan, handleMarkCompleted, 
         <div className="ActivityPlanDetail">
             <div className="section-heading">
                 {activityPlan.isComplete ?
-                    <span>ACTIVITY PLAN: <span>PLAN COMPLETE</span></span>
+                <div className="completed-heading">
+                    <span>ACTIVITY PLAN: COMPLETE</span>
+                </div>
                     :
                     <span>NEW ACTIVITY PLAN</span>
                 }
@@ -30,18 +32,19 @@ export default function ActivityPlanDetail({ activityPlan, handleMarkCompleted, 
                     <>
                         <h5>ACTIVITY &nbsp;&nbsp;&nbsp;&nbsp; DURATION</h5>
                         <div>{planItems}</div>
-                        <section className="total">
+                        <section className="activityplan-footer">
                             {activityPlan.isComplete ?
-                                <span>ACTIVITY PLAN COMPLETE</span>
-                            :
-                            <button
-                                onClick={handleMarkCompleted}
-                                disabled={!planItems.length}
-                            >MARK AS COMPLETED
-                            </button>
-                            }
-                            <div>Total Activities: {activityPlan.totalQty}</div>
-                            <div>Total Duration: {activityPlan.durationTotal} Hours</div>
+                                <button onClick={() => window.location.reload()}>START NEW PLAN</button>
+                                :
+                                <button
+                                    onClick={handleMarkCompleted}
+                                    disabled={!planItems.length}
+                                >SAVE
+                                </button>
+                                }
+                                <hr />
+                                <div>Total Activities: {activityPlan.totalQty}</div>
+                                <div>Total Duration: {activityPlan.durationTotal} Hours</div>
                         </section>
                     </>
                     :
