@@ -67,26 +67,5 @@ activityPlanSchema.methods.addActivityToPlan = async function (activityId) {
     return myplan.save();
 };
 
-// activityPlanSchema.methods.deleteActivityFromPlan = async function (activityId) {
-//     const myplan = this;
-//     const planItem = myplan.planItems.find(planItem => planItem.activity._id.equals(activityId));
-//     if (planItem) {
-//         const activity = await mongoose.model('Activity').findById(activityId);
-//         myplan.planItems.splice({activity}, 1);
-//         // planItem.qty -= 1;
-//     // } else {
-        
-//     }
-//     return myplan.save();
-// };
-
-activityPlanSchema.methods.deleteActivityFromPlan = async function (activityId) {
-    const myplan = this;
-    const planItem = myplan.planItems.find(planItem => planItem.activity._id.equals(activityId));
-    if (planItem) {
-        myplan.planItems.remove(planItem);
-    }
-    return myplan.save();
-}
 
 module.exports = mongoose.model('ActivityPlan', activityPlanSchema)

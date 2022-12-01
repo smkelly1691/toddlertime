@@ -1,4 +1,5 @@
 const ActivityPlan = require('../../models/activityPlan');
+const { remove } = require('../../models/activitySchema');
 // const Activity = require('../../models/activity');
 
 module.exports = {
@@ -34,6 +35,7 @@ async function markComplete(req, res) {
 
 async function deleteFromPlan(req, res) {
     const myplan = await ActivityPlan.getMyplan(req.user._id);
-    await myplan.deleteActivityFromPlan(req.params.id);
+    myplan.planItems.remove(req.params.id);
+    await myplan.save();
     res.json(myplan);
 }
