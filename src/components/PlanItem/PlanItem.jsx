@@ -8,8 +8,8 @@ export default function PlanItem({ planItem, handleDeleteActivity }) {
                     <tbody>
                         <tr>
                             <td>{planItem.activity.name}</td>
-                            <td>{planItem.activity.duration} min</td>
-                            <td>
+                            <td className="duration">{planItem.activity.duration} min</td>
+                            <td className="button">
                                 <button 
                                     onClick={() => handleDeleteActivity(planItem._id)}
                                 >X

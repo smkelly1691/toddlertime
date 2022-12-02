@@ -1,14 +1,25 @@
-span {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 15px;
+table button {
+    margin-right: auto;
+    margin-left: auto;
 }
 
-div.PlanItem {
-    display: flex;
-    justify-content:space-evenly;
-    flex-direction: column;
-    padding-bottom: 10px;
+table {
+    border: 1px solid black;
+    /* margin: 2px; */
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+table td {
+    border-right: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+.duration {
+    width: 35px;
+}
+
+.button {
+    width: 30px;
 }

@@ -8,9 +8,7 @@ import ActivityPlanDetail from "../../components/ActivityPlanDetail/ActivityPlan
 import CategoryList from "../../components/CategoryList/CategoryList";
 import ActivityList from "../../components/ActivityList/ActivityList";
 import UserLogOut from "../../components/UserLogOut/UserLogOut";
-import NavBar from "../../components/NavBar/NavBar";
-import { useNavigate } from "react-router-dom";
-import PlanItem from "../../components/PlanItem/PlanItem";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function NewPlanPage({ user, setUser }) {
     const [planItems, setPlanItems] = useState([]);
@@ -62,12 +60,17 @@ export default function NewPlanPage({ user, setUser }) {
             </header>
             <div className="body">
                 <aside>
-                    <CategoryList 
+                    <div><CategoryList 
                         categories={categoriesRef.current}
                         activeCat={activeCat}
                         setActiveCat={setActiveCat}
                     />
-                    <NavBar />
+                    </div>
+                    <div className="my-plan-link">
+                        <button>
+                            <Link to="/activityPlans">MY PLANS</Link>
+                        </button>
+                    </div>
                 </aside>
                 <div className="activity-list">
                     <h2>{activeCat} Activities</h2>
@@ -77,7 +80,7 @@ export default function NewPlanPage({ user, setUser }) {
                         handleDeleteActivity={handleDeleteActivity}
                     />
                 </div>
-                <div>
+                <div className="activity-plan-detail">
                 <ActivityPlanDetail 
                     activityPlan={myplan} 
                     handleMarkCompleted={handleMarkCompleted} 

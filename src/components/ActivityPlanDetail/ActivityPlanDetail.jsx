@@ -17,11 +17,19 @@ export default function ActivityPlanDetail({ activityPlan, handleMarkCompleted, 
         <div className="ActivityPlanDetail">
             <div className="plan-heading">
                 {activityPlan.isComplete ?
-                    <p>ACTIVITY PLAN: COMPLETE</p>
+                    <div>
+                        <p><b>PLAN  | COMPLETE</b></p>
+                        <hr />
+                    </div>
                     :
-                    <p className="newplan">NEW PLAN</p>
+                    <div className="newplan">
+                        <p>NEW PLAN</p>
+                        <hr />
+                    </div>
                 }
-                <p>START DATE: <span>{new Date(activityPlan.startDate).toLocaleDateString()}</span></p>
+                <div>
+                    <p>{new Date(activityPlan.startDate).toLocaleDateString()}</p>
+                </div>
             </div>
             <div className="planItems">
                 {planItems.length ?
@@ -36,9 +44,10 @@ export default function ActivityPlanDetail({ activityPlan, handleMarkCompleted, 
                                 <button onClick={() => window.location.reload()}>START NEW PLAN</button>
                                 :
                                 <button
+                                    className="save-btn"
                                     onClick={handleMarkCompleted}
                                     disabled={!planItems.length}
-                                >SAVE
+                                >DONE
                                 </button>
                                 }
                                 <hr />

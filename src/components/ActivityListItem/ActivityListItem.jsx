@@ -4,13 +4,18 @@ export default function ActivityListItem({ planItem, handleAddToPlan }) {
     return (
         <div className="ActivityListItem">
             <div className="list-item">
-                <h4>Name: <span className="name">{planItem.name}</span></h4>
-                <h4>&nbsp; | &nbsp; Duration: <span className="duration">{planItem.duration} minutes</span></h4>
-            </div>
-            <div className="buttons">
-                <button>DETAILS</button>
-                &nbsp;&nbsp;
-                <button onClick={() => handleAddToPlan(planItem._id)}>ADD TO PLAN</button>
+                <table>
+                    <tr>
+                        <th>Activity Name</th>
+                        <th>Activity Duration</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>{planItem.name}</td>
+                        <td>{planItem.duration} minutes</td>
+                        <td><button onClick={() => handleAddToPlan(planItem._id)}>ADD TO PLAN</button></td>
+                    </tr>
+                </table>
             </div>
         </div>
     );
