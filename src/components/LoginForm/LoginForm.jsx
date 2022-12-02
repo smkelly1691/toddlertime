@@ -32,11 +32,20 @@ export default function LoginForm({ setUser }) {
     <div>
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
+          <h2>Log In</h2>
+          <ul className="noBullet">
+            <li>
+              <label>Email</label>
+              <input className="inputFields" type="text" name="email" value={credentials.email} onChange={handleChange} required />
+            </li>
+            <li>
+              <label>Password</label>
+              <input className="inputFields" type="password" name="password" value={credentials.password} onChange={handleChange} required />
+            </li>
+          <li>
+            <button type="submit">LOG IN</button>
+            </li>
+          </ul>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

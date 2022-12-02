@@ -34,10 +34,6 @@ export default function ActivityPlanDetail({ activityPlan, handleMarkCompleted, 
             <div className="planItems">
                 {planItems.length ?
                     <>
-                    <section className="planList-heading">
-                        <div>ACTIVITY</div>
-                        <div>DURATION</div>
-                    </section>
                         <div>{planItems}</div>
                         <section className="activityplan-footer">
                             {activityPlan.isComplete ?

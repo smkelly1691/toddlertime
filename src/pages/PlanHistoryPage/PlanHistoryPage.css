@@ -1,37 +1,25 @@
+.PlanHistoryPage {
+    margin-top: 5px;
+    width: 750px;
+}
+
 .body-header {
     padding: 10px;
     margin: 10px;
 }
-
-/* main.PlanHistoryPage {
-    width: 100%;
-} */
 
 .PlanHistoryPage h2 {
     text-decoration: underline;
     padding-top: 0;
 }
 
-/* .history-header {
-    padding: 20px;
-} */
-
-/* .history-header div {
-    margin-right: 15px;
-} */
-
-/* .history-header button {
-    margin-right: 0px;
-    margin-left: 15px;
-} */
-
 .history-body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     background-color: #F9D7CF;
-    height: 70vh;
-    width: 80vh;
+    height: 75vh;
+    width: 100%;
     border: 2px solid black;
     overflow-y: scroll;
 }

@@ -1,3 +1,10 @@
+.NewPlanPage {
+    max-width: 1000px;
+    min-width: 763px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 100%
+}
 
 .activity-list h2 {
     margin-bottom: 15px;
@@ -9,10 +16,10 @@
 .body {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #F9D7CF;
-    height: 80vh;
+    height: 660px;
     width: 100%;
     border: 2px solid black;
     padding-bottom: 10px;

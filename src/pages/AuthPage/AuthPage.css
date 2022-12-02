@@ -1,0 +1,49 @@
+.authpage {
+    margin: 20px;
+    /* height: 600px; */
+    width: 700px;
+}
+
+.authpage li {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
+    padding: 0;
+}
+
+.authpage .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.authpage form {
+    border: 1px solid black;
+    background-color: #BBE6E9;
+    margin: auto;
+    padding: auto;
+    width: 300px;
+}
+
+.authpage header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.authpage .inputFields {
+    padding: 5px;
+    margin-bottom: 7px;
+}
+
+.authpage label {
+    margin: 5px;
+}
+
+.authpage button {
+    padding: 10px;
+}

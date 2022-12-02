@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <main className="App">
-      <div className="app-container">
+      {/* <div className="app-container"> */}
       { user ? 
       <>
         <Routes>
@@ -23,7 +23,7 @@ export default function App() {
         :
         <AuthPage setUser={setUser} />
       }
-      </div>
+      {/* </div> */}
     </main>
   );
 }
