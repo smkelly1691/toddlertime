@@ -22,8 +22,9 @@
 <p>Django</p>
 
 
-<h3>Getting Started</h3>
+<h3>Links</h3>
 <h4><a href=""> Link to Application</a></h4>
+<h4><a href="https://trello.com/invite/b/iVrNilE2/ATTIe1575c3d8a7386d629c0182ef88327f164CFEEFC/project-4-toddler-time"> Link to Trello Board</a></h4>
 
 <h4>Next Steps:</h4>
   <ul>
