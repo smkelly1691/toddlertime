@@ -15,22 +15,21 @@ export default function ActivityPlanDetail({ activityPlan, handleMarkCompleted, 
 
     return (
         <div className="ActivityPlanDetail">
-            <div className="section-heading">
+            <div className="plan-heading">
                 {activityPlan.isComplete ?
-                <div className="completed-heading">
-                    <span>ACTIVITY PLAN: COMPLETE</span>
-                </div>
+                    <p>ACTIVITY PLAN: COMPLETE</p>
                     :
-                    <span>NEW ACTIVITY PLAN</span>
+                    <p className="newplan">NEW PLAN</p>
                 }
-                <span><br></br></span>
-                <span>START DATE:</span>
-                <span>{new Date(activityPlan.updatedAt).toLocaleDateString()}</span>
+                <p>START DATE: <span>{new Date(activityPlan.startDate).toLocaleDateString()}</span></p>
             </div>
             <div className="planItems">
                 {planItems.length ?
                     <>
-                        <h5>ACTIVITY &nbsp;&nbsp;&nbsp;&nbsp; DURATION</h5>
+                    <section className="planList-heading">
+                        <div>ACTIVITY</div>
+                        <div>DURATION</div>
+                    </section>
                         <div>{planItems}</div>
                         <section className="activityplan-footer">
                             {activityPlan.isComplete ?
@@ -49,7 +48,7 @@ export default function ActivityPlanDetail({ activityPlan, handleMarkCompleted, 
                     </>
                     :
                     <div className="empty">
-                    No Items added to Plan
+                    No Activities
                     </div>
                 }
             </div>

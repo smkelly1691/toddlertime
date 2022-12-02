@@ -1,0 +1,14 @@
+.activity-table {
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.activity-table td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.activity-table th {
+    padding: 10px;
+    border: 1px solid black;
+}

@@ -1,14 +1,28 @@
 import './ActivityPlanListItem.css';
+import { format } from 'date-fns'
 
 export default function ActivityPlanListItem({ activityPlan }) {
+
+
     return (
         <div className="ActivityPlanListItem">
             <div className="list-item">
-                <h4>Activity Plan ID: <span className="name">{activityPlan.planId}</span></h4>
-                <h4>Start Date: <span className="date">{activityPlan.createdAt}</span></h4>
-                <h4>Last Updated: <span className="date">{activityPlan.updatedAt}</span></h4>
-                <h4>Activity Total: <span className="total">{activityPlan.totalQty}</span></h4>
-                <h4>Total Duration: <span className="duration">{activityPlan.durationTotal} hours</span></h4>
+                <table className="activity-table">
+                    <tr>
+                        <th>Plan ID</th>
+                        <th>Start Date</th>
+                        <th>Completed</th>
+                        <th>Activity Total</th>
+                        <th>Total Duration</th>
+                    </tr>
+                    <tr>
+                        <td>{activityPlan.planId}</td>
+                        <td>{activityPlan.extStartDate}</td>
+                        <td>{activityPlan.completeDate}</td>
+                        <td>{activityPlan.totalQty}</td>
+                        <td>{activityPlan.durationTotal} Hours</td>
+                    </tr>
+                </table>
             </div>
         </div>
     );

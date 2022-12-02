@@ -56,9 +56,9 @@ export default function NewPlanPage({ user, setUser }) {
     return (
         <main className="NewPlanPage">
             <header>
-                <UserDetail user={user} />
-                <Logo />
-                <UserLogOut user={user} setUser={setUser} />
+                <div><UserDetail user={user} /></div>
+                <div><Logo /></div>
+                <div><UserLogOut user={user} setUser={setUser} /></div>
             </header>
             <div className="body">
                 <aside>

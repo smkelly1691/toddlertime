@@ -1,28 +1,37 @@
-.PlanHistoryPage {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vh;
-    text-align: center;
+.body-header {
+    padding: 10px;
+    margin: 10px;
 }
 
-.body {
-    width: 100vh;
-    padding: 40px;
+/* main.PlanHistoryPage {
+    width: 100%;
+} */
+
+.PlanHistoryPage h2 {
+    text-decoration: underline;
+    padding-top: 0;
+}
+
+/* .history-header {
+    padding: 20px;
+} */
+
+/* .history-header div {
+    margin-right: 15px;
+} */
+
+/* .history-header button {
+    margin-right: 0px;
+    margin-left: 15px;
+} */
+
+.history-body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-
-}
-
-header {
-    width: 100vh;
-}
-
-footer {
-    width: 100vh;
-    padding-left: 40px;
-    padding-right: 40px; 
+    background-color: #F9D7CF;
+    height: 70vh;
+    width: 80vh;
+    border: 2px solid black;
+    overflow-y: scroll;
 }

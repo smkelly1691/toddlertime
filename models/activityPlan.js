@@ -47,6 +47,14 @@ activityPlanSchema.virtual('planId').get(function() {
     return this.id.slice(-6).toUpperCase()
 })
 
+activityPlanSchema.virtual('extStartDate').get(function() {
+    return this.startDate.toLocaleDateString()
+})
+
+activityPlanSchema.virtual('completeDate').get(function() {
+    return this.updatedAt.toLocaleDateString()
+})
+
 activityPlanSchema.statics.getMyplan = function(userId) {
     return this.findOneAndUpdate(
         { user: userId, isComplete: false },
