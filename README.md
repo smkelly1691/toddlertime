@@ -1,7 +1,7 @@
 <h1>Toddler Time</h1>
 <h3>Toddler Time is an application for parents or caregivers of young children not yet starting school. It can be challenging to figure out what to do during the day to not only keep the child you are responsible for entertained and busy but obtaining the knowledge and skill set that they will need when they start school. Toddler Time provides a user with a list of categories such as "Math" or "Sensory" that each include a set of Activities of varying durations. The user can browse through the categories and their containing Activities and choose some that they would like to try out with their child. The user is able to add the activity to an Activity Plan and then eventually save (mark complete) the plan so that it will be saved in their history. They are also provided a summary of the total number of activities they have chosen and a total duration to create an activity plan that works for them and their schedule</h3>
 
-[Toddler Time Homepage](<a href="https://toddlertime.herokuapp.co"</a>)
+[Toddler Time Homepage](<a href="https://toddlertime.herokuapp.co"></a>)
 
 <h3>Application Images</h3>
   <p><a href="https://imgur.com/i8BKMwq"><img src="https://i.imgur.com/i8BKMwq.png" title="source: imgur.com" /></a></p>
