@@ -1,9 +1,5 @@
 .NewPlanPage {
-    max-width: 1000px;
-    min-width: 763px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    height: 100%
+    width: 800px;
 }
 
 .activity-list h2 {
@@ -14,32 +10,20 @@
 }
 
 .body {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
     background-color: #F9D7CF;
-    height: 660px;
     width: 100%;
     border: 2px solid black;
-    padding-bottom: 10px;
 }
 
-header {
+.header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     padding-bottom: 5px;
     background-color: #BBE6E9;
     border: 2px solid black;
-    width: 100%;
+    padding: 10px;
 }
 
-header div {
-    padding-left: 5px;
-    padding-right: 10px;
-}
 
 aside {
     display: flex;
@@ -48,18 +32,16 @@ aside {
     align-items: center;
     height: 100%;
     border-right: 2px solid black;
+    padding-top: 10px;
 }
 
 footer {
     height: 8vh;
     width: 100%;
-    margin-top: 0;
-    padding-top: 0;
     background-color: #BBE6E9;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: flex-end;
+    justify-content: space-between;
     border: 2px solid black;
 }
 
@@ -67,20 +49,7 @@ footer span {
     margin: 0px 10px 5px 10px;
 }
 
-.my-plan-link {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-}
-
-.my-plan-link button {
-    padding: 20px;
-    font-size: 15px;
-}
-
 .activity-plan-detail {
     height: 100%;
-    width: 200px;
-    margin: 0;
-    padding: 0;
+    width: 100%;
 }

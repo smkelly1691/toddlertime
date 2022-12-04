@@ -1,29 +1,33 @@
 
 .ActivityPlanDetail {
-    width: 100%;
-    height: 100%;
     overflow-y: scroll;
     border-left: 2px solid black;
     font-size: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 10px;
     align-items: center;
-    margin-right: auto;
-    margin-left: auto;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
 }
 
-.plan-heading {
+div.plan-heading {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
-    border-right: 1px solid black;
     background-color: aliceblue;
-    padding: 0;
-    margin: 0;
+    width: 100%;
+}
+
+div.planItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
 }
 
 .newplan {
@@ -40,28 +44,6 @@
     margin: 4px;
 }
 
-div.plan-heading {
-    width: 100%;
-}
-
-.planList-heading {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-    margin: 5px;
-    font-weight: 550;
-}
-
-.total {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-top: 10px;
-    margin-top: 10px;
-}
-
 h5 {
     margin-top: 10px;
 }
@@ -72,8 +54,6 @@ div.ActivityPlanDetail {
     justify-content: flex-start;
     align-items: center;
     height: 100%;
-    width: 100%;
-
 }
 
 .empty {
@@ -82,5 +62,6 @@ div.ActivityPlanDetail {
 
 .save-btn {
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px;
 }

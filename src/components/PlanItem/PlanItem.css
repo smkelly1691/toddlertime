@@ -1,26 +1,26 @@
 table button {
-    margin-right: auto;
-    margin-left: auto;
     padding: 10px;
 }
 
-table {
-    border: 1px solid black;
-    margin: 2px;
-    width: 100%;
-    margin-bottom: 2px;
+div.PlanItem {
+    width: 96%;
 }
 
-table td {
-    border-right: 1px solid black;
+.PlanItem table {
+    border: 1px solid black;
+    width: 100%;
+    margin: 5px;
     padding: 5px;
-    text-align: center;
+}
+
+.PlanItem table td {
+    border-right: 1px solid black;
 }
 
 .duration {
-    width: 35px;
+    width: 66px;
 }
 
 .button {
-    width: 30px;
+    width: 37px;
 }

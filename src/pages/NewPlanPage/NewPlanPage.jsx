@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import './NewPlanPage.css'
+import { Button } from 'antd';
+import { Col, Row } from 'antd';
 import * as activitiesAPI from '../../utilities/activities-api';
 import * as activityPlansAPI from '../../utilities/activityPlans-api';
 import UserDetail from "../../components/UserDetail/UserDetail";
@@ -53,45 +55,59 @@ export default function NewPlanPage({ user, setUser }) {
 
     return (
         <main className="NewPlanPage">
-            <header>
-                <div><UserDetail user={user} /></div>
-                <div><Logo /></div>
-                <div><UserLogOut user={user} setUser={setUser} /></div>
-            </header>
-            <div className="body">
-                <aside>
-                    <div><CategoryList 
-                        categories={categoriesRef.current}
-                        activeCat={activeCat}
-                        setActiveCat={setActiveCat}
-                    />
+            <Row className="header">
+                <Col span={5}>
+                    <div><UserDetail user={user} /></div>
+                </Col>
+                <Col span={14}>
+                    <div><Logo /></div>
+                </Col>
+                <Col span={5}>
+                    <div><UserLogOut user={user} setUser={setUser} /></div>
+                </Col>
+            </Row>
+            <Row className="body">
+                <Col span={5}>
+                    <aside>
+                        <div><CategoryList 
+                            categories={categoriesRef.current}
+                            activeCat={activeCat}
+                            setActiveCat={setActiveCat}
+                        />
+                        </div>
+                        <div className="my-plan-link">
+                            <Button type="link" block="true">
+                                <Link to="/activityPlans">MY PLANS</Link>
+                            </Button>
+                        </div>
+                    </aside>
+                </Col>
+                <Col span={12}>
+                    <div className="activity-list">
+                        <h2>{activeCat} Activities</h2>
+                        <ActivityList
+                            planItems={planItems.filter(activity => activity.category.name === activeCat)}
+                            handleAddToPlan={handleAddToPlan} 
+                            handleDeleteActivity={handleDeleteActivity}
+                        />
                     </div>
-                    <div className="my-plan-link">
-                        <button>
-                            <Link to="/activityPlans">MY PLANS</Link>
-                        </button>
-                    </div>
-                </aside>
-                <div className="activity-list">
-                    <h2>{activeCat} Activities</h2>
-                    <ActivityList
-                        planItems={planItems.filter(activity => activity.category.name === activeCat)}
-                        handleAddToPlan={handleAddToPlan} 
+                </Col>
+                <Col span={7}>
+                    <ActivityPlanDetail 
+                        activityPlan={myplan} 
+                        handleMarkCompleted={handleMarkCompleted} 
                         handleDeleteActivity={handleDeleteActivity}
                     />
-                </div>
-                <div className="activity-plan-detail">
-                <ActivityPlanDetail 
-                    activityPlan={myplan} 
-                    handleMarkCompleted={handleMarkCompleted} 
-                    handleDeleteActivity={handleDeleteActivity}
-                />
-                </div>
-            </div>
-            <footer>
-                <span>Toddler Time</span>
-                <span>© 2022 | Powered by React | All Rights Reserved</span>
-            </footer>
+                </Col>
+            </Row>
+            <Row>
+                <Col span={24}>
+                    <footer>
+                        <span>Toddler Time</span>
+                        <span>© 2022 | Powered by React | All Rights Reserved</span>
+                    </footer>
+                </Col>
+            </Row>
         </main>
     );
 }

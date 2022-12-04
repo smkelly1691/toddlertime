@@ -7,7 +7,7 @@ export default function PlanItem({ planItem, handleDeleteActivity }) {
                 <table>
                     <tbody>
                         <tr>
-                            <td>{planItem.activity.name}</td>
+                            <td className="name">{planItem.activity.name}</td>
                             <td className="duration">{planItem.activity.duration} min</td>
                             <td className="button">
                                 <button 

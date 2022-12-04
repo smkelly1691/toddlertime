@@ -1,0 +1,5 @@
+.ActivityPlanList {
+    height: 600px;
+    overflow-y: scroll;
+    width: 100%;
+}

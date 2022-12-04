@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import 'antd/dist/reset.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import { getUser } from '../../utilities/users-service';
@@ -11,7 +12,6 @@ export default function App() {
 
   return (
     <main className="App">
-      {/* <div className="app-container"> */}
       { user ? 
       <>
         <Routes>
