@@ -18,10 +18,10 @@
   }
 }
 
-@media only screen and (max-width: 390px){
+@media only screen and (max-width: 800px){
   
-  main {
-    max-width: 390px;
+  .App main {
+    max-width: 600px;
     }
   
   .email {
@@ -29,6 +29,18 @@
   }
 
   }
+
+  @media only screen and (max-width: 600px){
+  
+    .App main {
+      max-width: 500px;
+      }
+    
+    .email {
+      display: none;
+    }
+  
+    }
 
 @keyframes App-logo-spin {
   from {
