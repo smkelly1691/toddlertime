@@ -42,6 +42,18 @@
   
     }
 
+    @media only screen and (max-width: 390px){
+  
+      .App main {
+        max-width: 400px;
+        }
+      
+      .email {
+        display: none;
+      }
+    
+      }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
