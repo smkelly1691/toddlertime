@@ -1,5 +1,4 @@
 import './ActivityPlanListItem.css';
-import { format } from 'date-fns'
 
 export default function ActivityPlanListItem({ activityPlan }) {
 
